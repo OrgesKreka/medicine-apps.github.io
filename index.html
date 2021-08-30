@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    
+    <style>
+        .form-group{
+            padding-top: 20px;
+        }
+
+        .alert{
+            display: none;
+        }
+
+    </style>
+    
+    <title>Medicine - Projects</title>
+</head>
+<body>
+    <h2 class="display-3 d-flex justify-content-center">Llogaritesi i dozes</h2>
+    <br>
+    <div class="container">
+        <form>
+            
+            <div class="container card">
+            
+            <div class="card-header">
+                Te dhenat e femijes:
+            </div>
+
+            <div class="form-group">
+              <label for="childWeight">Pesha e femijes:</label>
+              <input type="number" class="form-control" id="childWeight" aria-describedby="childWeightHelp" placeholder="Pesha e femijes ne njesine perkatese">
+              <small id="childWeightHelp" class="form-text text-muted">Vendos peshen e femijes ne nje nga njesite percaktuara g, kg etj.</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="weightUnit">Njesia e peshes</label>
+                <select class="form-select" id="weightUnit">
+                    <option selected value="kg">Kilogram</option>
+                    <option value="g">Gram</option>
+                    <option value="mg">Miligram</option>
+                  </select>
+            </div>
+            
+            </div>
+
+            <br>
+
+            <div class="container card">
+                
+                <div class="card-header">
+                    Te dhenat e Ilacit:
+                  </div>
+
+                  <div class="form-group">
+                    <label for="medicineDoseForWeight">Doza e Ilacit per peshe:</label>
+                    <input type="number" class="form-control" id="medicineDoseForWeight" aria-describedby="medicineDoseForWeightHelp" placeholder="Doza e ilacit per femijen" >
+                    <small id="medicineDoseForWeightHelp" class="form-text text-muted">Vendos dozen e ilacit ne nje nga njesite percaktuara.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="medicineDoseForWeightUnit">Njesia e perqendrimit:</label>
+                    <select class="form-select" id="medicineDoseForWeightUnit">
+                        <option selected value="mg/kg">Miligram per Kilogram</option>
+                      </select>
+                </div>
+
+
+                <br>
+                <div class="form-group">
+                    <label for="medicineDosage">Doza ditore e Ilacit:</label>
+                    <input type="number" class="form-control" id="medicineDosage" aria-describedby="medicineDosageHelp" placeholder="Doza e ilacit ne njesine perkatese">
+                    <small id="medicineDosageHelp" class="form-text text-muted">Vendos dozen e ilacit ne nje nga njesite percaktuara.</small>
+                </div>
+    
+                <div class="form-group">
+                    <label for="medicineDoseUnit">Njesia e ilacit</label>
+                    <select class="form-select" id="medicineDoseUnit">
+                        <option selected value="mg">Miligram</option>
+                        <option value="kg">Kilogram</option>
+                        <option value="g">Gram</option>
+                      </select>
+                </div>
+
+                <br>
+
+                <div class="row">
+                  <div class="col-sm">
+                    <div class="form-group">
+                        <label for="medicineConcetration1">Perqendrimi i Ilacit 1:</label>
+                        <input type="number" class="form-control" id="medicineConcetration1" aria-describedby="medicineConcetrationHelp1" placeholder="Perqendrimi i ilacit ne njesine perkatese">
+                        <small id="medicineConcetrationHelp1" class="form-text text-muted">Vendos dozen e ilacit ne nje nga njesite percaktuara.</small>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="medicineConcetrationUnit">Njesia e perqendrimit:</label>
+                        <select class="form-select" id="medicineConcetrationUnit">
+                            <option selected value="mg">Miligram</option>
+                            <option value="kg">Kilogram</option>
+                            <option value="g">Gram</option>
+                          </select>
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="form-group">
+                        <label for="medicineConcetration2">Perqendrimi i Ilacit 2:</label>
+                        <input type="number" class="form-control" id="medicineConcetration2" aria-describedby="medicineConcetrationHelp2" placeholder="Vellimi i tretesires ne njesine perkatese">
+                        <small id="medicineConcetrationHelp2" class="form-text text-muted">Vendos vellimin e tretesires ne nje nga njesite percaktuara.</small>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="medicineConcetrationUnit">Njesia e perqendrimit:</label>
+                        <select class="form-select" id="medicineConcetrationUnit">
+                            <option selected value="ml">Mililitra</option>
+                            <option value="l">Litra</option>
+                          </select>
+                    </div>
+                  </div>
+              </div>
+
+              <br>
+
+            <button type="button" class="btn btn-primary" id="calculate">Llogarit</button>
+          </form>
+
+          <br>
+          <br>
+
+          <div class="alert alert-danger" role="alert" id="error-result"></div>
+
+          <div class="alert alert-success" role="alert" id="result"></div>
+
+    </div>
+
+    <script>
+        const medicineDoseinput = document.getElementById( 'medicineDoseForWeight' )
+
+        const calculateButton = document.getElementById( 'calculate' )
+
+
+        medicineDoseinput.addEventListener( 'keyup', (event)=>{
+
+            const weightValue = document.getElementById( 'childWeight' ).value
+            const medicineDosageValue = document.getElementById( 'medicineDoseForWeight' ).value
+
+
+            const dailyDose = weightValue * medicineDosageValue
+
+            document.getElementById( 'medicineDosage' ).value = dailyDose
+
+        })
+
+
+        calculateButton.addEventListener( 'click', () => {
+
+            const medicineConcetration = document.getElementById( 'medicineConcetration1' ).value
+            const medicineConcetration2 = document.getElementById( 'medicineConcetration2' ).value
+            const medicineDailyDoseForWeight = document.getElementById( 'medicineDosage' ).value
+
+            const calculatedDose = medicineDailyDoseForWeight * medicineConcetration2 / medicineConcetration
+
+            if(isNaN( calculatedDose ))
+            {
+                var errorDiv = document.getElementById( 'error-result' )
+                errorDiv.style.display = 'block'
+
+                errorDiv.innerText = 'Vlera te gabuara !' + ' \n Ju lutem jepni vlera te sakta per te bere llogaritjet!'
+            }
+            else
+            {
+                var resultDiv = document.getElementById( 'result' )
+                resultDiv.style.display='block'
+
+                resultDiv.innerText= `${calculatedDose} ml`
+            }
+        } );
+
+
+    </script>
+</body>
+</html>
